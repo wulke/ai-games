@@ -6,9 +6,30 @@ description: Task implementation workflow ensuring proper branching, testing, an
 
 This workflow should be followed for **every task** to ensure code quality and proper version control.
 
-## 1. Branch Check & Management
+## 1. Create Feature Branch (REQUIRED)
 
-Before starting work, ensure you're on a feature branch (not `main`).
+**IMPORTANT:** Always create a feature branch BEFORE starting any work. Never commit directly to `main`.
+
+```bash
+# Check current branch
+git branch
+
+# If on main, create a new feature branch
+git checkout -b feature/descriptive-name
+
+# Examples:
+# git checkout -b feature/solitaire-core-models
+# git checkout -b feature/move-validation
+# git checkout -b fix/card-flip-bug
+```
+
+**Branch Naming Convention:**
+- `feature/` - New features or enhancements
+- `fix/` - Bug fixes
+- `docs/` - Documentation updates
+- `refactor/` - Code refactoring
+
+### Optional: Use Task Check Script
 
 ```bash
 chmod +x scripts/task_check.sh
