@@ -18,10 +18,9 @@
 **Description:** Create a workflow to facilitate structured ideation sessions.
 **Status:** Completed. Workflow created at `.agent/workflows/brainstorming.md` with helper script `scripts/brainstorm.sh`.
 
-### 5. Establish TDD Framework
+### 5. Establish TDD Framework [DONE]
 **Description:** Set up the testing environment to support Test Driven Development.
-**Suggested Prompt:**
-> "Install and configure a testing framework (e.g., Vitest) compatible with Vite and TypeScript. Create a sample test file to verify the configuration and document how to run the tests in watch mode."
+**Status:** Completed. Vitest installed and configured with sample tests passing. See `docs/testing.md` for usage guide.
 
 ### 6. TDD: Deck Implementation
 **Description:** Implement the Deck logic using the new TDD framework.

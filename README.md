@@ -16,6 +16,23 @@ npm run dev
 
 Visit `http://localhost:5173` to see the app.
 
+### Testing
+```bash
+# Run tests once
+npm test -- --run
+
+# Run tests in watch mode
+npm test
+
+# Run tests with UI
+npm run test:ui
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+See [Testing Guide](docs/testing.md) for more details on writing and running tests.
+
 ## 📋 Project Management
 
 This project uses AI-assisted workflows to maintain context and ensure quality.
@@ -64,6 +81,7 @@ To begin working on the next task:
 
 - **[Project Brief](docs/project_brief.md)** - Overview, tech stack, and feature roadmap
 - **[Action Items](docs/action_items.md)** - Active task list with suggested prompts
+- **[Testing Guide](docs/testing.md)** - How to write and run tests with Vitest
 
 ## 🛠️ Tech Stack
 
@@ -71,6 +89,7 @@ To begin working on the next task:
 - **Logic:** TypeScript
 - **Framework:** Alpine.js
 - **Build Tool:** Vite
+- **Testing:** Vitest
 
 ## 📖 Workflows
 
