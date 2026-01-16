@@ -33,7 +33,53 @@ To manually run tests:
 npm test
 ```
 
-## 4. Commit Your Changes
+## 4. Create Pull Request Document
+
+Before committing, create a PR document to review all changes:
+
+**Create PR file:**
+```bash
+# Create PR directory if it doesn't exist
+mkdir -p docs/pull_requests
+
+# Create PR document (increment number for each PR)
+touch docs/pull_requests/pr_XXX_description.md
+```
+
+**PR Document Template:**
+```markdown
+# Pull Request: [Task Name]
+
+**Branch:** `feature/branch-name` → `main`
+**Date:** YYYY-MM-DD
+
+## 📋 Task Description
+[Brief description of what was implemented]
+
+## 🔨 Changes Implemented
+### New Files Created
+- List new files and their purpose
+
+### Modified Files
+- List modified files and what changed
+
+## ✅ Test Cases
+- Test summary (X passed)
+- Key test scenarios
+- How to run tests
+
+## 🎯 Impact Assessment
+- Risk level
+- Breaking changes (if any)
+- Benefits
+
+## ✍️ Review Checklist
+- [ ] All tests passing
+- [ ] Documentation updated
+- [ ] Ready to merge
+```
+
+## 5. Commit Your Changes
 
 Once tests pass, commit your work:
 
@@ -47,7 +93,7 @@ git commit -m "feat: descriptive commit message"
 - Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`
 - Keep messages concise but descriptive
 
-## 5. Update Documentation
+## 6. Update Documentation
 
 After completing a task:
 - Update `docs/action_items.md` to mark the task as `[DONE]`

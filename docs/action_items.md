@@ -22,7 +22,6 @@
 **Description:** Set up the testing environment to support Test Driven Development.
 **Status:** Completed. Vitest installed and configured with sample tests passing. See `docs/testing.md` for usage guide.
 
-### 6. TDD: Deck Implementation
+### 6. TDD: Deck Implementation [DONE]
 **Description:** Implement the Deck logic using the new TDD framework.
-**Suggested Prompt:**
-> "Using TDD, implement the `Card` and `Deck` classes. Start by writing a test for a `Card` having a suit and rank, then implement the class to pass. Continue by writing tests for `Deck` shuffling and drawing, then implement."
+**Status:** Completed. Card and Deck classes implemented with full test coverage (26 tests passing).

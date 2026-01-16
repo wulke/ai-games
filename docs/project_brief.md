@@ -11,6 +11,9 @@
 
 ## 2. Currently Implemented Features
 *   **Project Initialization** - Basic Vite + Alpine.js setup complete.
+*   **Workflows** - Resume, Task Implementation, and Brainstorming workflows.
+*   **TDD Framework** - Vitest configured with full testing infrastructure.
+*   **Core Models** - Card and Deck classes with comprehensive test coverage.
 
 ## 3. Upcoming Features Plan
 
