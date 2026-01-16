@@ -14,10 +14,9 @@
 **Description:** Create a workflow to guide task execution, ensuring proper branching, testing, and committing.
 **Status:** Completed. Workflow created at `.agent/workflows/task_implementation.md` with helper script `scripts/task_check.sh`.
 
-### 4. Create "Brainstorming" Workflow
+### 4. Create "Brainstorming" Workflow [DONE]
 **Description:** Create a workflow to facilitate structured ideation sessions.
-**Suggested Prompt:**
-> "Create a workflow file at `.agent/workflows/brainstorming.md`. This workflow should prompt me for a topic, and then guide me through a structured brainstorming process, recording ideas and potential action items."
+**Status:** Completed. Workflow created at `.agent/workflows/brainstorming.md` with helper script `scripts/brainstorm.sh`.
 
 ### 5. Establish TDD Framework
 **Description:** Set up the testing environment to support Test Driven Development.
