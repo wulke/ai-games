@@ -1,6 +1,6 @@
 # Alpine.js Card Games
 
-A lightweight, browser-based application to play card games using a standard 52-card deck, built with Alpine.js and TypeScript.
+A lightweight, browser-based card games platform using a standard 52-card deck, built with Alpine.js and TypeScript. Currently implementing Klondike Solitaire as the first game.
 
 ## 🚀 Quick Start
 
