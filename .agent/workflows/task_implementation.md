@@ -114,11 +114,41 @@ git commit -m "feat: descriptive commit message"
 - Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`
 - Keep messages concise but descriptive
 
-## 6. Update Documentation
+## 6. Merge to Main (After PR Approval)
 
-After completing a task:
+Once your PR is approved, merge the feature branch into `main` using **squash merge**:
+
+```bash
+# Switch to main
+git checkout main
+
+# Squash merge the feature branch
+git merge --squash feature/your-branch-name
+
+# Commit with descriptive message
+git commit -m "feat: descriptive message
+
+- Detail 1
+- Detail 2
+- Detail 3
+
+Squashed from feature/your-branch-name"
+
+# Delete the feature branch
+git branch -D feature/your-branch-name
+```
+
+**Why Squash Merge?**
+- Keeps main branch history clean with one commit per feature
+- Preserves detailed commit history in feature branch (until deleted)
+- Makes it easier to revert entire features if needed
+
+## 7. Update Documentation
+
+After merging to main:
 - Update `docs/action_items.md` to mark the task as `[DONE]`
 - Update `docs/project_brief.md` if new features were implemented
+- Create new feature branch for next task
 
 ---
 
