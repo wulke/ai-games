@@ -4,7 +4,7 @@
  */
 
 import { describe, it, expect } from 'vitest'
-import { Card, Suit, Rank } from '../src/models/Card'
+import { Card, Suit, Rank } from '@/models/Card'
 
 describe('Card', () => {
   describe('Constructor', () => {

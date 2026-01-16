@@ -12,6 +12,7 @@
     "test:coverage": "vitest --coverage"
   },
   "devDependencies": {
+    "@types/node": "^25.0.9",
     "@vitest/ui": "^4.0.17",
     "jsdom": "^27.4.0",
     "typescript": "~5.9.3",
