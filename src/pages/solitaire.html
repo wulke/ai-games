@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Klondike Solitaire - Alpine Card Games</title>
+  <link rel="stylesheet" href="/src/style/main.css">
+  <link rel="stylesheet" href="/src/style/solitaire.css">
+  <!-- cardsJS styling will go here -->
+  <link rel="stylesheet" href="/src/style/cards.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="/" class="nav-brand">Alpine Card Games</a>
+    <ul class="nav-links">
+      <li class="nav-item"><a href="/">Home</a></li>
+      <li class="nav-item">
+        <a href="#">Games ▾</a>
+        <div class="dropdown-content">
+          <a href="/src/pages/solitaire.html">Solitaire</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <main id="solitaire-app" class="solitaire-container">
+    <div class="game-header">
+      <h1>Klondike Solitaire</h1>
+      <div class="game-stats">
+        <span>Score: 0</span>
+        <span>Time: 00:00</span>
+      </div>
+    </div>
+
+    <div class="board">
+      <div class="top-row">
+        <div class="stock-waste">
+          <div id="stock-pile" class="pile-slot stock"></div>
+          <div id="waste-pile" class="pile-slot waste"></div>
+        </div>
+        <div class="foundations">
+          <div id="foundation-0" class="pile-slot foundation"></div>
+          <div id="foundation-1" class="pile-slot foundation"></div>
+          <div id="foundation-2" class="pile-slot foundation"></div>
+          <div id="foundation-3" class="pile-slot foundation"></div>
+        </div>
+      </div>
+
+      <div class="tableau">
+        <div id="tableau-0" class="pile-slot tableau-pile"></div>
+        <div id="tableau-1" class="pile-slot tableau-pile"></div>
+        <div id="tableau-2" class="pile-slot tableau-pile"></div>
+        <div id="tableau-3" class="pile-slot tableau-pile"></div>
+        <div id="tableau-4" class="pile-slot tableau-pile"></div>
+        <div id="tableau-5" class="pile-slot tableau-pile"></div>
+        <div id="tableau-6" class="pile-slot tableau-pile"></div>
+      </div>
+    </div>
+
+    <footer class="game-controls">
+      <button class="btn">New Game</button>
+      <button class="btn">Undo</button>
+      <button class="btn">Hint</button>
+    </footer>
+  </main>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

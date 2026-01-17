@@ -20,6 +20,7 @@
     "vitest": "^4.0.17"
   },
   "dependencies": {
-    "alpinejs": "^3.15.4"
+    "alpinejs": "^3.15.4",
+    "cardsJS": "^1.1.1"
   }
 }

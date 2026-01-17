@@ -1,16 +1,41 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alpine Card Games</title>
-  </head>
-  <body>
-    <div id="app">
-      <h1>Alpine Card Games</h1>
-      <p>Project Initialized</p>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alpine Card Games - Home</title>
+  <link rel="stylesheet" href="/src/style/main.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="/" class="nav-brand">Alpine Card Games</a>
+    <ul class="nav-links">
+      <li class="nav-item"><a href="/">Home</a></li>
+      <li class="nav-item">
+        <a href="#">Games ▾</a>
+        <div class="dropdown-content">
+          <a href="/src/pages/solitaire.html">Solitaire</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="hero">
+    <h1>Welcome to the Card Table</h1>
+    <p>High-quality, browser-based card games built with Alpine.js and TypeScript.</p>
+
+    <div class="game-grid">
+      <a href="/src/pages/solitaire.html" class="game-card">
+        <h3>Klondike Solitaire</h3>
+        <p>The classic single-player card game. Test your patience and strategy.</p>
+      </a>
     </div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+  </main>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
