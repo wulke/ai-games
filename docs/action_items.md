@@ -15,15 +15,16 @@
 **Suggested Prompt:**
 > "Let's implement the Solitaire game logic using TDD. Start with the SolitaireGame class and core game state models."
 
-### 8. Solitaire Game Logic - Move Validation
+### 8. Solitaire Game Logic - Move Validation [DONE]
 **Description:** Implement move validation and game mechanics for Solitaire.
-**Status:** Not started.
+**Status:** Completed. All move types implemented with comprehensive test coverage (23 tests passing).
 **Components:**
-- Move validation logic (tableau to tableau, tableau to foundation, etc.)
-- Auto-move detection (automatically move cards to foundation when possible)
-- Undo/redo functionality
-- Win condition detection
-- Score tracking (optional)
+- Move validation logic (all move types) ✅
+- Draw from stock (3 cards at a time, reset from waste) ✅
+- Waste to Tableau/Foundation moves ✅
+- Tableau to Tableau/Foundation moves ✅
+- Undo/redo functionality with move history ✅
+- Auto-move detection and execution ✅
 
 **Suggested Prompt:**
 > "Implement the move validation logic for Solitaire, including all legal move types and win condition detection."
