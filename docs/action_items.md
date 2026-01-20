@@ -4,62 +4,6 @@
 
 [🐞 Bug Tracker](bug_tracker.md)
 
-### 7. Solitaire Game Logic - Core Models [DONE]
-**Description:** Implement the core game models for Solitaire (Klondike variant) using TDD approach.
-**Status:** Completed. All core models implemented with comprehensive test coverage (65 tests passing).
-**Components:**
-- `SolitaireGame` class - Main game state manager ✅
-- `Tableau` class - Seven tableau piles ✅
-- `Foundation` class - Four foundation piles (Ace to King) ✅
-- `Stock` and `Waste` piles ✅
-- Game initialization and state tracking ✅
-- React-based state management (`useSolitaire` hook) ✅
-
-**Suggested Prompt:**
-> "Let's implement the Solitaire game logic using TDD. Start with the SolitaireGame class and core game state models."
-
-### 8. Solitaire Game Logic - Move Validation [DONE]
-**Description:** Implement move validation and game mechanics for Solitaire.
-**Status:** Completed. All move types implemented with comprehensive test coverage (23 tests passing).
-**Components:**
-- Move validation logic (all move types) ✅
-- Draw from stock (3 cards at a time, reset from waste) ✅
-- Waste to Tableau/Foundation moves ✅
-- Tableau to Tableau/Foundation moves ✅
-- Undo/redo functionality with move history ✅
-- Auto-move detection and execution ✅
-
-**Suggested Prompt:**
-> "Implement the move validation logic for Solitaire, including all legal move types and win condition detection."
-
-### 9. Solitaire UI - Layout and Styling [DONE]
-**Description:** Create the visual layout for the Solitaire game table with modern, premium design.
-**Status:** Completed. Multi-game architecture, navigation bar, and premium board implemented.
-**Components:**
-- Multi-game page architecture (`index.html`, `solitaire.html`) ✅
-- Responsive navigation bar with games dropdown ✅
-- Green felt table background with premium gradient ✅
-- Integrated `cardsJS` for high-quality SVG card rendering ✅
-- Responsive pile layouts (Tableau, Foundation, Stock, Waste) ✅
-- Fixed card sizing and alignment ✅
-
-**Suggested Prompt:**
-> "Create a stunning, modern UI for the Solitaire game with a premium green felt table design and beautiful card layouts."
-
-### 10. Solitaire UI - Interactivity with @dnd-kit [DONE]
-**Description:** Implement drag-and-drop card mechanics and game interactions using `@dnd-kit` and React.
-**Status:** Completed. High-performance drag-and-drop system with tactile feedback and stack dragging.
-**Components:**
-- `@dnd-kit/core` integration (DndContext, DragOverlay) ✅
-- Custom `DraggableCard` and `DroppablePile` components ✅
-- Stack dragging for Tableau piles ✅
-- Smooth "snap-back" and "lift" animations ✅
-- Visual polish (visibility management, inset shadows) ✅
-- Automatic move detection (waste to foundation, etc.) ✅
-
-**Suggested Prompt:**
-> "Let's refine the @dnd-kit configuration further for that premium 'weighty' feel."
-
 ### 11. Solitaire - Integration and Polish [/]
 **Description:** Connect UI to logic, end-to-end testing, performance, accessibility, and optional enhancements.
 **Status:** In progress. Interactivity is connected, and visual polish is ongoing.
@@ -71,7 +15,7 @@
 - Clean stack dragging (no ghosting) ✅
 - Performance optimization
 - Add sound effects (optional)
-- Add statistics/leaderboard (optional)
+- Scoring and Leaderboard (See #15)
 - Accessibility improvements
 - Cross-browser testing
 
@@ -110,6 +54,18 @@
 **Suggested Prompt:**
 > "Let's add an info system to the game. Implement a button that opens a modal showing the rules and instructions for the current card game."
 
+### 15. Solitaire - Scoring and Local Leaderboard
+**Description:** Implement the scoring mechanism and a local leaderboard to track top performances.
+**Status:** Not started.
+**Components:**
+- Scoring logic (Standard Klondike: 5pts to tableau, 10pts to foundation, etc.)
+- In-memory leaderboard state (top 5 or 10 scores)
+- Leaderboard UI component and toggle
+- Game-over sequence with score submission
+
+**Suggested Prompt:**
+> "Let's implement the scoring mechanism for Solitaire and add a local leaderboard that stays in memory during the session."
+
 ---
 
 ## Completed Items
@@ -140,5 +96,21 @@
 ### 6. TDD: Deck Implementation [DONE]
 **Description:** Implement the Deck logic using the new TDD framework.
 **Status:** Completed. Card and Deck classes implemented with full test coverage (26 tests passing).
+
+### 7. Solitaire Game Logic - Core Models [DONE]
+**Description:** Implement the core game models for Solitaire (Klondike variant) using TDD approach.
+**Status:** Completed. All core models implemented with comprehensive test coverage (65 tests passing).
+
+### 8. Solitaire Game Logic - Move Validation [DONE]
+**Description:** Implement move validation and game mechanics for Solitaire.
+**Status:** Completed. All move types implemented with comprehensive test coverage (23 tests passing).
+
+### 9. Solitaire UI - Layout and Styling [DONE]
+**Description:** Create the visual layout for the Solitaire game table with modern, premium design.
+**Status:** Completed. Multi-game architecture, navigation bar, and premium board implemented.
+
+### 10. Solitaire UI - Interactivity with @dnd-kit [DONE]
+**Description:** Implement drag-and-drop card mechanics and game interactions using `@dnd-kit` and React.
+**Status:** Completed. High-performance drag-and-drop system with tactile feedback and stack dragging.
 
 </details>
