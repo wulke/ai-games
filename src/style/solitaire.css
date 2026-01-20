@@ -1,4 +1,19 @@
-/* Solitaire Game Board Styles */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --card-width: 125px;
+  --card-aspect-ratio: 2.5 / 3.5;
+  --card-border-radius: 8px;
+  --card-inner-radius: 8px;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --accent-gold: #ffd700;
+  --fan-offset-v: 45px;
+  --fan-offset-h: 35px;
+  --fan-offset-v-closed: 20px;
+}
+
 .solitaire-container {
   min-height: calc(100vh - 60px);
   /* Adjust for navbar */
@@ -68,23 +83,99 @@
 
 /* Pile Slots */
 .pile-slot {
-  width: 100px;
-  aspect-ratio: 2.5 / 3.5;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  background: rgba(0, 0, 0, 0.1);
+  width: var(--card-width);
+  aspect-ratio: var(--card-aspect-ratio);
+  border-radius: var(--card-border-radius);
+  background: rgba(0, 0, 0, 0.15);
   position: relative;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* Clean placeholder look without distracting inset shadows */
+  border: 2px dashed rgba(255, 255, 255, 0.1);
 }
 
-/* Ensure cards fill the slot */
-.pile-slot .card {
-  width: 100% !important;
-  height: 100% !important;
+/* Base Card Styles - Global so they work in DragOverlay */
+.card {
+  width: var(--card-width) !important;
+  /* Explicit height based on aspect ratio to guarantee perfect fit */
+  height: calc(var(--card-width) / (var(--card-aspect-ratio))) !important;
+  aspect-ratio: var(--card-aspect-ratio);
+  object-fit: fill;
+  background: white;
+  border-radius: var(--card-inner-radius);
+  box-shadow: var(--card-shadow);
+  /* Use inset shadow for border to maintain consistent external dimensions */
+  box-shadow: var(--card-shadow), inset 0 0 0 1px rgba(0, 0, 0, 0.1);
   display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Board Positioning - Scoped to piles */
+.pile-slot .card {
+  position: absolute;
+  top: -2px;
+  /* Pull up slightly to account for the slot border */
+  left: -2px;
+}
+
+.pile-slot .card.dragging {
+  display: none;
+  /* Hide the original card when dragging in @dnd-kit */
+}
+
+/* @dnd-kit specific feedback */
+.pile-slot.drag-over {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent-gold);
+  box-shadow: inset 0 0 10px var(--accent-gold);
+}
+
+.dragging-stack {
+  pointer-events: none;
+  z-index: 1000;
+  width: var(--card-width);
+  /* Match board width */
+}
+
+.dragging-stack .card {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  /* Ensure absolute positioning for stack logic */
+  top: 0;
+  left: 0;
+}
+
+.pile-slot .card[draggable="true"] {
+  cursor: grab;
+}
+
+.pile-slot .card[draggable="true"]:active {
+  cursor: grabbing;
+}
+
+.pile-slot.vhand-compact {
+  display: block;
+  position: relative;
+  height: 100%;
+}
+
+.pile-slot.hhand-compact {
+  display: block;
+  position: relative;
+}
+
+/* Library Overrides - Neutralize CardJS defaults that cause misalignment */
+.vhand-compact img.card,
+.hhand-compact img.card {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.tableau-pile {
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px dashed rgba(255, 255, 255, 0.15);
+  min-height: calc(var(--card-width) / (var(--card-aspect-ratio)));
 }
 
 .pile-slot::after {
@@ -97,13 +188,38 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  opacity: 0.1;
+  font-size: 3rem;
+  /* Larger icon */
+  opacity: 0.25;
+  /* Higher contrast */
   pointer-events: none;
 }
 
-.foundation::after {
+/* Only show symbols when the pile is empty */
+.pile-slot:has(.card)::after {
+  display: none;
+}
+
+.foundation-hearts::after {
+  content: '♥';
+  color: #ff5252;
+  /* Brighter red */
+}
+
+.foundation-diamonds::after {
+  content: '♦';
+  color: #ff5252;
+}
+
+.foundation-clubs::after {
+  content: '♣';
+  color: rgba(255, 255, 255, 0.4);
+  /* Brighter white/grey */
+}
+
+.foundation-spades::after {
   content: '♠';
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .stock::after {
@@ -141,16 +257,14 @@
 
 /* Responsive Scaling */
 @media (max-width: 900px) {
-  .pile-slot {
-    width: 80px;
-    height: 116px;
+  :root {
+    --card-width: 90px;
   }
 }
 
 @media (max-width: 600px) {
-  .pile-slot {
-    width: 60px;
-    height: 87px;
+  :root {
+    --card-width: 65px;
   }
 
   .board {

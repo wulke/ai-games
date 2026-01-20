@@ -2,6 +2,8 @@
 
 ## Current Focus: Solitaire Implementation
 
+[🐞 Bug Tracker](bug_tracker.md)
+
 ### 7. Solitaire Game Logic - Core Models [DONE]
 **Description:** Implement the core game models for Solitaire (Klondike variant) using TDD approach.
 **Status:** Completed. All core models implemented with comprehensive test coverage (65 tests passing).
@@ -11,6 +13,7 @@
 - `Foundation` class - Four foundation piles (Ace to King) ✅
 - `Stock` and `Waste` piles ✅
 - Game initialization and state tracking ✅
+- React-based state management (`useSolitaire` hook) ✅
 
 **Suggested Prompt:**
 > "Let's implement the Solitaire game logic using TDD. Start with the SolitaireGame class and core game state models."
@@ -43,26 +46,29 @@
 **Suggested Prompt:**
 > "Create a stunning, modern UI for the Solitaire game with a premium green felt table design and beautiful card layouts."
 
-### 10. Solitaire UI - Interactivity with Alpine.js
-**Description:** Implement drag-and-drop card mechanics and game interactions using Alpine.js.
-**Status:** Not started.
+### 10. Solitaire UI - Interactivity with @dnd-kit [DONE]
+**Description:** Implement drag-and-drop card mechanics and game interactions using `@dnd-kit` and React.
+**Status:** Completed. High-performance drag-and-drop system with tactile feedback and stack dragging.
 **Components:**
-- Drag-and-drop for moving cards
-- Click interactions (stock pile, auto-move)
-- Visual feedback for valid/invalid moves
-- Animation for card movements
-- Game controls (new game, undo, hint)
-- Alpine.js state management integration
+- `@dnd-kit/core` integration (DndContext, DragOverlay) ✅
+- Custom `DraggableCard` and `DroppablePile` components ✅
+- Stack dragging for Tableau piles ✅
+- Smooth "snap-back" and "lift" animations ✅
+- Visual polish (visibility management, inset shadows) ✅
+- Automatic move detection (waste to foundation, etc.) ✅
 
 **Suggested Prompt:**
-> "Implement the drag-and-drop mechanics and Alpine.js interactivity for the Solitaire game UI."
+> "Let's refine the @dnd-kit configuration further for that premium 'weighty' feel."
 
-### 11. Solitaire - Integration and Polish
+### 11. Solitaire - Integration and Polish [/]
 **Description:** Connect UI to logic, end-to-end testing, performance, accessibility, and optional enhancements.
-**Status:** Not started.
+**Status:** In progress. Interactivity is connected, and visual polish is ongoing.
 **Components:**
-- Connect UI to game logic
-- End-to-end testing
+- Connect UI to game logic ✅
+- Visual polish (suit contrast, alignment) ✅
+- End-to-end interactivity testing ✅
+- Predictable stack fanning and offsets ✅
+- Clean stack dragging (no ghosting) ✅
 - Performance optimization
 - Add sound effects (optional)
 - Add statistics/leaderboard (optional)
@@ -70,7 +76,7 @@
 - Cross-browser testing
 
 **Suggested Prompt:**
-> "Let's integrate the Solitaire UI with the game logic, add polish, and make sure everything works smoothly end-to-end."
+> "Let's continue polishing the Solitaire UI and fix how cards are displaying in piles."
 
 ### 12. UI Customization - Theme Support
 **Description:** Implement a theme system to allow switching between different visual styles.
@@ -92,6 +98,18 @@
 **Suggested Prompt:**
 > "Let's implement a retro Windows 95/2000 theme for our Solitaire game, including the iconic teal background and pixelated card backs."
 
+### 14. Game Rules - Help/Info System
+**Description:** Implement an info button to review game rules and instructions.
+**Status:** Not started.
+**Components:**
+- Info/Help button in the UI
+- Rules modal or side panel
+- Content/Markdown for specific game rules (e.g., Solitaire rules)
+- Alpine.js integration for modal state management
+
+**Suggested Prompt:**
+> "Let's add an info system to the game. Implement a button that opens a modal showing the rules and instructions for the current card game."
+
 ---
 
 ## Completed Items
@@ -101,7 +119,7 @@
 
 ### 1. Project Initialization [DONE]
 **Description:** Set up the codebase with the required technology stack.
-**Status:** Completed. Project initialized with Vite, TypeScript, and Alpine.js.
+**Status:** Completed. Project initialized with Vite, TypeScript, React, and `@dnd-kit`. (Transitioned from Alpine.js to React for better interactivity support).
 
 ### 2. Create "Resume Work" Workflow [DONE]
 **Description:** Create a workflow file to help restore context when returning to the project.

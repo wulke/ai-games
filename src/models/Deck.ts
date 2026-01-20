@@ -2,7 +2,8 @@
  * Deck class - represents a standard 52-card deck
  */
 
-import { Card, Suit, Rank } from './Card'
+import { Card } from './Card'
+import type { Suit, Rank } from './Card'
 
 export class Deck {
   cards: Card[]

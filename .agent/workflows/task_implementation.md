@@ -148,6 +148,7 @@ git branch -D feature/your-branch-name
 After merging to main:
 - Update `docs/action_items.md` to mark the task as `[DONE]`
 - Update `docs/project_brief.md` if new features were implemented
+- Review existing workflows in `.agent/workflows/` and documentation in `docs/` to ensure any changes from the task are reflected correctly.
 - Create new feature branch for next task
 
 ---

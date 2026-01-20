@@ -9,33 +9,10 @@
   <link rel="stylesheet" href="/src/style/main.css">
 </head>
 
-<body>
-  <nav class="navbar">
-    <a href="/" class="nav-brand">Alpine Card Games</a>
-    <ul class="nav-links">
-      <li class="nav-item"><a href="/">Home</a></li>
-      <li class="nav-item">
-        <a href="#">Games ▾</a>
-        <div class="dropdown-content">
-          <a href="/src/pages/solitaire.html">Solitaire</a>
-        </div>
-      </li>
-    </ul>
-  </nav>
-
-  <main class="hero">
-    <h1>Welcome to the Card Table</h1>
-    <p>High-quality, browser-based card games built with Alpine.js and TypeScript.</p>
-
-    <div class="game-grid">
-      <a href="/src/pages/solitaire.html" class="game-card">
-        <h3>Klondike Solitaire</h3>
-        <p>The classic single-player card game. Test your patience and strategy.</p>
-      </a>
-    </div>
-  </main>
-
-  <script type="module" src="/src/main.ts"></script>
+<main id="root">
+  <!-- React will mount here -->
+</main>
+<script type="module" src="/src/main.tsx"></script>
 </body>
 
 </html>

@@ -8,7 +8,6 @@ import { Foundation } from './Foundation'
 import { Tableau } from './Tableau'
 import { Stock } from './Stock'
 import { Waste } from './Waste'
-import type { Card } from '../Card'
 import { MoveType, type Move } from './Move'
 
 export interface GameState {

@@ -3,7 +3,8 @@
  * Cards must be built up from Ace to King in the same suit
  */
 
-import { Card, Suit, Rank } from '../Card'
+import { Card } from '../Card'
+import type { Suit, Rank } from '../Card'
 
 export class Foundation {
   suit: Suit

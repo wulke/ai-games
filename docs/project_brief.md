@@ -49,11 +49,12 @@ Implement classic Klondike Solitaire as the first complete game. This phase will
 -   **State Binding:** Alpine.js reactive state management
 -   **Animations:** Smooth card movements and transitions
 
-#### 3.5 Integration & Polish
--   **End-to-End Testing:** Verify complete game flow
--   **Performance:** Optimize for smooth 60fps animations
--   **Accessibility:** Keyboard navigation and screen reader support
--   **Optional Features:** Sound effects, statistics, leaderboard
+- **Integration & Polish:** Verify complete game flow, accessibility, and tutorial/rules system
+- **E2E Testing:** Automated browser tests for full win paths
+- **Performance:** Optimize for smooth 60fps animations
+- **Accessibility:** Keyboard navigation and screen reader support
+- **Game Rules:** Integrated info system for rules and instructions
+- **Optional Features:** Sound effects, statistics, leaderboard
 
 ---
 

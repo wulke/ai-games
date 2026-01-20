@@ -81,6 +81,7 @@ To begin working on the next task:
 
 - **[Project Brief](docs/project_brief.md)** - Overview, tech stack, and feature roadmap
 - **[Action Items](docs/action_items.md)** - Active task list with suggested prompts
+- **[Bug Tracker](docs/bug_tracker.md)** - Track and manage discovered issues
 - **[Testing Guide](docs/testing.md)** - How to write and run tests with Vitest
 
 ## 🛠️ Tech Stack

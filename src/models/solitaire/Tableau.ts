@@ -3,7 +3,8 @@
  * Cards must be built down in descending rank with alternating colors
  */
 
-import { Card, type Rank } from '../Card'
+import { Card } from '../Card'
+import type { Rank } from '../Card'
 
 export class Tableau {
   cards: Card[]
