@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import Home from './components/Home'
 import Solitaire from './components/Solitaire'
+import { ThemeProvider } from './context/ThemeContext'
+import ThemeSwitcher from './components/ThemeSwitcher'
 
-const App: React.FC = () => {
+const AppContent: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<'home' | 'solitaire'>('home')
 
   return (
@@ -12,6 +14,7 @@ const App: React.FC = () => {
           AI Card Games
         </a>
         <ul className="nav-links">
+          <ThemeSwitcher />
           <li className="nav-item">
             <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('home'); }}>Home</a>
           </li>
@@ -30,5 +33,11 @@ const App: React.FC = () => {
     </div>
   )
 }
+
+const App: React.FC = () => (
+  <ThemeProvider>
+    <AppContent />
+  </ThemeProvider>
+)
 
 export default App
