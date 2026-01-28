@@ -22,13 +22,6 @@
 **Suggested Prompt:**
 > "Let's continue polishing the Solitaire UI and fix how cards are displaying in piles."
 
-### 12. UI Customization - Theme Support
-**Description:** Implement a theme system to allow switching between different visual styles.
-**Status:** Not started (Lower Priority).
-**Components:**
-- CSS variable-based design system
-- Theme switcher UI
-- Persistence of user preference (localStorage)
 
 ### 13. Retro Theme - Windows 95/2000 Aesthetic
 **Description:** Create a dedicated retro theme modeled after classic Windows Solitaire.
@@ -66,7 +59,32 @@
 **Suggested Prompt:**
 > "Let's implement the scoring mechanism for Solitaire and add a local leaderboard that stays in memory during the session."
 
+
+### 16. Multi-Player Framework & Trick-Taking Core
+**Description:** Build the foundational models and UI for multi-player card games.
+**Status:** Not started.
+**Components:**
+- `Player` and `CPUPlayer` models
+- `MultiplayerGame` base class with turn management
+- `Trick` model for tracking plays
+- "Four Seats" UI layout component
+
+**Suggested Prompt:**
+> "Let's start building the Multi-Player Framework. Implement the Player and CPUPlayer models to handle turns and basic AI logic."
+
+### 17. Hearts Implementation
+**Description:** Implement the game of Hearts as the first multi-player trick-taking game.
+**Status:** Not started.
+**Components:**
+- Hearts-specific game logic and scoring
+- Card passing mechanic (Left, Right, Across, Hold)
+- UI integration with the multi-player layout
+
+**Suggested Prompt:**
+> "Let's implement Hearts using our new Multi-Player Framework. Start with the core Hearts logic and the card passing phase."
+
 ---
+
 
 ## Completed Items
 
@@ -112,5 +130,9 @@
 ### 10. Solitaire UI - Interactivity with @dnd-kit [DONE]
 **Description:** Implement drag-and-drop card mechanics and game interactions using `@dnd-kit` and React.
 **Status:** Completed. High-performance drag-and-drop system with tactile feedback and stack dragging.
+
+### 12. UI Customization - Theme Support [DONE]
+**Description:** Implement a theme system to allow switching between different visual styles.
+**Status:** Completed. CSS variable-based system with 4 initial themes and localStorage persistence.
 
 </details>

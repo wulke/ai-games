@@ -56,7 +56,34 @@ Implement classic Klondike Solitaire as the first complete game. This phase will
 - **Game Rules:** Integrated info system for rules and instructions
 - **Optional Features:** Sound effects, statistics, leaderboard
 
+
+### Phase 4: Multi-Player Framework & Trick-Taking Core
+Develop the infrastructure for multiplayer card games against AI.
+- **Models:** `MultiplayerGame`, `Player`, `CPUPlayer`, `Trick` classes.
+- **Turn Management:** Orchestrate turns between human and AI players.
+- **UI:** Universal "Four Seats" table layout for trick-taking games.
+
+### Phase 5: Hearts Implementation
+The first multiplayer trick-taking game using the full 52-card deck.
+- **Mechanics:** Avoidance scoring (Hearts & Queen of Spades), card passing logic.
+- **AI:** Basic point-avoidance strategy.
+
+### Phase 6: Spades Implementation
+Partnership-based trick-taking with bidding.
+- **Mechanics:** Bidding system, partnership scoring, Spades as permanent trump.
+- **AI:** Bidding and trick estimation logic.
+
+### Phase 7: Euchre Implementation
+Fast-paced partnership game with a modified deck and special trump logic.
+- **Mechanics:** 24-card deck, Bower logic, trump selection bidding.
+
+### Phase 8: Rummy & Cribbage
+Expanding to meld-based and pegging-based games.
+- **Rummy:** Sets/Runs logic and discard pile interactions.
+- **Cribbage:** Hand scoring engine and pegging board UI.
+
 ---
+
 
 ## Completed Phases
 
