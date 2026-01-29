@@ -107,6 +107,9 @@ Once tests pass, commit your work:
 ```bash
 git add .
 git commit -m "feat: descriptive commit message"
+
+# REQUIRED: Push to origin
+git push -u origin feature/your-branch-name
 ```
 
 **Commit Message Guidelines:**
@@ -114,36 +117,47 @@ git commit -m "feat: descriptive commit message"
 - Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`
 - Keep messages concise but descriptive
 
-## 6. Merge to Main (After PR Approval)
+## 6. Create GitHub Pull Request
 
-Once your PR is approved, merge the feature branch into `main` using **squash merge**:
+Instead of merging locally, always create a Pull Request on GitHub.
 
+**Option A: Using GitHub CLI (Recommended)**
 ```bash
-# Switch to main
-git checkout main
-
-# Squash merge the feature branch
-git merge --squash feature/your-branch-name
-
-# Commit with descriptive message
-git commit -m "feat: descriptive message
-
-- Detail 1
-- Detail 2
-- Detail 3
-
-Squashed from feature/your-branch-name"
-
-# Delete the feature branch
-git branch -D feature/your-branch-name
+# This will create a PR and give you the link
+gh pr create --fill
 ```
+
+**Option B: Using GitHub Website**
+1. Push your branch (Step 5).
+2. Visit `https://github.com/wulke/ai-games`.
+3. Click "Compare & pull request".
+4. Review your changes and submit.
+
+## 7. Merge to Main (After PR Review)
+
+Once the PR is approved on GitHub:
+1. Use the GitHub UI to perform a **Squash and Merge**.
+2. Alternatively, use the CLI:
+   ```bash
+   gh pr merge --squash
+   ```
+
+3. Locally, clean up your branches:
+   ```bash
+   # Switch to main and pull latest changes
+   git checkout main
+   git pull origin main
+
+   # Delete the local feature branch
+   git branch -D feature/your-branch-name
+   ```
 
 **Why Squash Merge?**
 - Keeps main branch history clean with one commit per feature
 - Preserves detailed commit history in feature branch (until deleted)
 - Makes it easier to revert entire features if needed
 
-## 7. Update Documentation
+## 8. Update Documentation
 
 After merging to main:
 - Update `docs/action_items.md` to mark the task as `[DONE]`
