@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import Home from './components/Home'
 import Solitaire from './components/Solitaire'
+import { HeartsView } from './components/hearts/HeartsView'
 import { ThemeProvider } from './context/ThemeContext'
 import ThemeSwitcher from './components/ThemeSwitcher'
 
 const AppContent: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<'home' | 'solitaire'>('home')
+  const [currentPage, setCurrentPage] = useState<'home' | 'solitaire' | 'hearts'>('home')
 
   return (
     <div className="app-container">
@@ -22,13 +23,23 @@ const AppContent: React.FC = () => {
             <a href="#">Games ▾</a>
             <div className="dropdown-content">
               <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('solitaire'); }}>Solitaire</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('hearts'); }}>Hearts</a>
             </div>
           </li>
         </ul>
       </nav>
 
       <main>
-        {currentPage === 'home' ? <Home onPlaySolitaire={() => setCurrentPage('solitaire')} /> : <Solitaire />}
+        {currentPage === 'home' ? (
+          <Home
+            onPlaySolitaire={() => setCurrentPage('solitaire')}
+            onPlayHearts={() => setCurrentPage('hearts')}
+          />
+        ) : currentPage === 'solitaire' ? (
+          <Solitaire />
+        ) : (
+          <HeartsView />
+        )}
       </main>
     </div>
   )

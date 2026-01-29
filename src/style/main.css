@@ -22,6 +22,8 @@
   --table-border: rgba(255, 255, 255, 0.1);
   --slot-bg: rgba(0, 0, 0, 0.15);
   --accent-primary: #ffd700;
+  --accent-primary-alpha: rgba(255, 215, 0, 0.1);
+  --accent-primary-glow: rgba(255, 215, 0, 0.3);
 }
 
 /* Theme: Modern Dark */
@@ -32,6 +34,8 @@
   --table-border: rgba(255, 255, 255, 0.05);
   --slot-bg: rgba(255, 255, 255, 0.05);
   --accent-primary: #64b5f6;
+  --accent-primary-alpha: rgba(100, 181, 246, 0.1);
+  --accent-primary-glow: rgba(100, 181, 246, 0.3);
 
   /* Nav adjustments for Dark Mode */
   --nav-bg: #1e1e1e;
@@ -49,6 +53,8 @@
   --table-border: rgba(255, 255, 255, 0.15);
   --slot-bg: rgba(255, 255, 255, 0.1);
   --accent-primary: #ffffff;
+  --accent-primary-alpha: rgba(255, 255, 255, 0.1);
+  --accent-primary-glow: rgba(255, 255, 255, 0.3);
 }
 
 /* Theme: Retro Teal */
@@ -59,6 +65,8 @@
   --table-border: rgba(0, 0, 0, 0.4);
   --slot-bg: rgba(0, 0, 0, 0.05);
   --accent-primary: #ffffff;
+  --accent-primary-alpha: rgba(255, 255, 255, 0.2);
+  --accent-primary-glow: rgba(255, 255, 255, 0.4);
 
   /* Windows 95 UI colors */
   --nav-bg: #c0c0c0;

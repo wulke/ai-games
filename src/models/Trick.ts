@@ -1,4 +1,5 @@
-import { Card, Suit, Rank } from './Card';
+import { Card } from './Card';
+import type { Suit, Rank } from './Card';
 import { Player } from './Player';
 
 export interface PlayedCard {

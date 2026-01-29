@@ -1,7 +1,8 @@
 import React from 'react';
 import { Player } from '../models/Player';
 import { Card } from '../models/Card';
-import { Trick, PlayedCard } from '../models/Trick';
+import { Trick } from '../models/Trick';
+import type { PlayedCard } from '../models/Trick';
 import { CardUI } from './CardUI';
 import '../style/multiplayer.css';
 
@@ -10,13 +11,15 @@ interface MultiplayerTableProps {
   currentPlayerIndex: number;
   currentTrick: Trick | null;
   onCardClick?: (card: Card) => void;
+  selectedCards?: Card[];
 }
 
 export const MultiplayerTable: React.FC<MultiplayerTableProps> = ({
   players,
   currentPlayerIndex,
   currentTrick,
-  onCardClick
+  onCardClick,
+  selectedCards
 }) => {
   // Ensure we have 4 players for the layout, fill with placeholders if needed
   const displayPlayers = [...players];
@@ -42,23 +45,28 @@ export const MultiplayerTable: React.FC<MultiplayerTableProps> = ({
           </div>
 
           <div className="player-hand">
-            {player.hand.map((card, cardIndex) => (
-              <div
-                key={`${card.suit}-${card.rank}-${cardIndex}`}
-                className="card-wrapper"
-                onClick={() => index === 0 && onCardClick && onCardClick(card)}
-                style={{
-                  zIndex: cardIndex,
-                  left: index === 0 || index === 2 ? `${cardIndex * 30}px` : '0',
-                  top: index === 1 || index === 3 ? `${cardIndex * 20}px` : '0'
-                }}
-              >
-                <CardUI
-                  card={card}
-                  isFaceUp={index === 0} // Only show human player's hand face up
-                />
-              </div>
-            ))}
+            {(index === 0 ? Card.sort(player.hand) : player.hand).map((card, cardIndex) => {
+              const isSelected = selectedCards?.some((c: Card) => c.suit === card.suit && c.rank === card.rank);
+              const cardOffsetTop = isSelected ? -20 : 0;
+
+              return (
+                <div
+                  key={`${card.suit}-${card.rank}-${cardIndex}`}
+                  className={`card-wrapper ${isSelected ? 'selected' : ''}`}
+                  onClick={() => index === 0 && onCardClick && onCardClick(card)}
+                  style={{
+                    zIndex: cardIndex,
+                    left: index === 0 || index === 2 ? `${cardIndex * 30}px` : '0',
+                    top: index === 1 || index === 3 ? `calc(${cardIndex * 20}px + ${cardOffsetTop}px)` : `${cardOffsetTop}px`
+                  }}
+                >
+                  <CardUI
+                    card={card}
+                    isFaceUp={index === 0} // Only show human player's hand face up
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       ))}
