@@ -1,0 +1,51 @@
+{
+  "game": "hearts",
+  "playerIndex": 1,
+  "state": {
+    "hand": [
+      {
+        "suit": "H",
+        "rank": "10"
+      },
+      {
+        "suit": "H",
+        "rank": "Q"
+      },
+      {
+        "suit": "S",
+        "rank": "A"
+      },
+      {
+        "suit": "C",
+        "rank": "2"
+      }
+    ],
+    "currentTrick": [
+      {
+        "suit": "C",
+        "rank": "K"
+      }
+    ],
+    "scores": {
+      "round": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "total": [
+        15,
+        20,
+        10,
+        5
+      ]
+    },
+    "playedCards": []
+  },
+  "validMoves": [
+    {
+      "suit": "C",
+      "rank": "2"
+    }
+  ]
+}

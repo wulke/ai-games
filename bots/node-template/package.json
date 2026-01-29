@@ -1,0 +1,15 @@
+{
+  "name": "card-game-bot-template",
+  "version": "1.0.0",
+  "description": "Starter template for AI card game bots",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "dotenv": "^16.4.5"
+  }
+}

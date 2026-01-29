@@ -1,0 +1,67 @@
+{
+  "game": "solitaire",
+  "playerIndex": 0,
+  "state": {
+    "tableau": [
+      [
+        {
+          "suit": "S",
+          "rank": "K",
+          "isFaceUp": true
+        }
+      ],
+      [
+        {
+          "suit": "H",
+          "rank": "Q",
+          "isFaceUp": true
+        }
+      ],
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    "foundation": [
+      [],
+      [],
+      [],
+      []
+    ],
+    "stock": 24,
+    "waste": [
+      {
+        "suit": "D",
+        "rank": "10",
+        "isFaceUp": true
+      }
+    ]
+  },
+  "validMoves": [
+    {
+      "action": "move",
+      "source": {
+        "pile": "tableau",
+        "index": 1,
+        "cardIndex": 0
+      },
+      "destination": {
+        "pile": "tableau",
+        "index": 0
+      }
+    },
+    {
+      "action": "move",
+      "source": {
+        "pile": "waste",
+        "index": 0,
+        "cardIndex": 0
+      },
+      "destination": {
+        "pile": "tableau",
+        "index": 2
+      }
+    }
+  ]
+}
