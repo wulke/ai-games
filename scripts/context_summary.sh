@@ -11,6 +11,11 @@ echo "--- GIT STATUS ---"
 git status -s
 echo ""
 
+echo "--- REMOTE STATUS ---"
+git remote -v
+git status -uno | grep "Your branch is" || echo "Local branch is up to date with remote."
+echo ""
+
 echo "--- UPCOMING ACTION ITEMS ---"
 # Naive extraction of the first non-done item or specific markers. 
 # For now, just printing the first few lines of the Action Items doc or looking for 'IN PROGRESS'

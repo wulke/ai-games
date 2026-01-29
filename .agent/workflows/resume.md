@@ -12,7 +12,14 @@ description: Resume work on the project by getting a context summary.
     ./scripts/context_summary.sh
     ```
 
-2.  **Review Action Items**
+2.  **Sync with Remote**
+    Ensure your local repository has the latest information from GitHub.
+    
+    ```bash
+    git fetch origin
+    ```
+
+3.  **Review Action Items**
     Read the full action items list to see what is next.
     
     ```bash
