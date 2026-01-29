@@ -24,14 +24,26 @@ function calculateMove(game, state, validMoves) {
 }
 ```
 
-### 3. Build & Run (Docker)
-Build your bot's container:
+### 3. Build & Run (Instant)
+The easiest way to build, test, and run your bot in Docker is to use the provided dev script:
 ```bash
-docker build -t card-game-bot .
+# This builds the image, runs tests, and spins up the container
+./dev-docker.sh
+
+# Or via npm
+npm run docker:dev
 ```
 
-Run your bot using **host networking** so the UI can find it at `localhost:8080`:
+This script will automatically tail the logs. You can press `Ctrl+C` to stop following the logs; the bot will continue running in the background.
+
+---
+
+## 🛠️ Advanced Development & Debugging
+
+### Build & Run (Manual)
+If you prefer to run the steps manually:
 ```bash
+docker build -t card-game-bot .
 docker run -p 8080:8080 --network host card-game-bot
 ```
 
