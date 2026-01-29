@@ -4,7 +4,9 @@ import { Card } from '../models/Card';
 import { Trick } from '../models/Trick';
 import type { PlayedCard } from '../models/Trick';
 import { CardUI } from './CardUI';
+import { useDeveloperSettings } from '../context/DeveloperSettingsContext';
 import '../style/multiplayer.css';
+import '../style/developer_settings.css';
 
 interface MultiplayerTableProps {
   players: Player[];
@@ -21,6 +23,7 @@ export const MultiplayerTable: React.FC<MultiplayerTableProps> = ({
   onCardClick,
   selectedCards
 }) => {
+  const { settings, updateSettings } = useDeveloperSettings();
   // Ensure we have 4 players for the layout, fill with placeholders if needed
   const displayPlayers = [...players];
   while (displayPlayers.length < 4) {
@@ -40,7 +43,24 @@ export const MultiplayerTable: React.FC<MultiplayerTableProps> = ({
       {displayPlayers.map((player, index) => (
         <div key={player.id} className={`player-area player-${positions[index]} ${currentPlayerIndex === index ? 'active' : ''}`}>
           <div className="player-info">
-            <span className="player-name">{player.name}</span>
+            <div className="player-name-section">
+              <span className="player-name">{player.name}</span>
+              {settings.isExternalBotEnabled && (
+                <label className="bot-toggle-mini" title="Enable Bot for this player">
+                  <input
+                    type="checkbox"
+                    checked={settings.botPlayerIndices.includes(index)}
+                    onChange={(e) => {
+                      const newIndices = e.target.checked
+                        ? [...settings.botPlayerIndices, index]
+                        : settings.botPlayerIndices.filter(i => i !== index);
+                      updateSettings({ botPlayerIndices: newIndices });
+                    }}
+                  />
+                  <span className="bot-toggle-label">BOT</span>
+                </label>
+              )}
+            </div>
             <span className="player-score">Score: {player.score}</span>
           </div>
 

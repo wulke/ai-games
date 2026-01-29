@@ -4,9 +4,12 @@ import Solitaire from './components/Solitaire'
 import { HeartsView } from './components/hearts/HeartsView'
 import { ThemeProvider } from './context/ThemeContext'
 import ThemeSwitcher from './components/ThemeSwitcher'
+import { DeveloperSettingsProvider } from './context/DeveloperSettingsContext'
+import DeveloperSettings from './components/DeveloperSettings'
 
 const AppContent: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<'home' | 'solitaire' | 'hearts'>('home')
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false)
 
   return (
     <div className="app-container">
@@ -26,8 +29,15 @@ const AppContent: React.FC = () => {
               <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('hearts'); }}>Hearts</a>
             </div>
           </li>
+          <li className="nav-item">
+            <a href="#" title="Developer Settings" onClick={(e) => { e.preventDefault(); setIsSettingsOpen(true); }}>
+              🛠️
+            </a>
+          </li>
         </ul>
       </nav>
+
+      <DeveloperSettings isOpen={isSettingsOpen} onClose={() => setIsSettingsOpen(false)} />
 
       <main>
         {currentPage === 'home' ? (
@@ -47,7 +57,9 @@ const AppContent: React.FC = () => {
 
 const App: React.FC = () => (
   <ThemeProvider>
-    <AppContent />
+    <DeveloperSettingsProvider>
+      <AppContent />
+    </DeveloperSettingsProvider>
   </ThemeProvider>
 )
 
