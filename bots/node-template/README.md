@@ -35,7 +35,17 @@ Run your bot using **host networking** so the UI can find it at `localhost:8080`
 docker run -p 8080:8080 --network host card-game-bot
 ```
 
-### 4. Connect to UI
+### 4. Running Tests
+We've included a test suite using **Vitest** to help you verify your logic.
+```bash
+# Run tests once
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+```
+
+### 5. Connect to UI
 1. Open the Card Game UI in your browser.
 2. Go to **Developer Settings**.
 3. Set the Bot URL to `http://localhost:8080`.

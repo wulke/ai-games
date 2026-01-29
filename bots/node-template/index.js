@@ -24,9 +24,9 @@ app.post('/move', (req, res) => {
   // --- BOT LOGIC START ---
   // Currently implements a simple "Random Move" strategy.
   // This is where users will implement their own algorithms.
-  
+
   const move = calculateMove(game, state, validMoves);
-  
+
   // --- BOT LOGIC END ---
 
   res.json({ move });
@@ -35,7 +35,7 @@ app.post('/move', (req, res) => {
 /**
  * Simple random move selector.
  */
-function calculateMove(game, state, validMoves) {
+export function calculateMove(game, state, validMoves) {
   const randomIndex = Math.floor(Math.random() * validMoves.length);
   const selectedMove = validMoves[randomIndex];
 
@@ -50,7 +50,11 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok', engine: 'node-bot-template' });
 });
 
-app.listen(PORT, () => {
-  console.log(`Bot template running at http://localhost:${PORT}`);
-  console.log(`Standardized endpoint: POST http://localhost:${PORT}/move`);
-});
+export default app;
+
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`Bot template running at http://localhost:${PORT}`);
+    console.log(`Standardized endpoint: POST http://localhost:${PORT}/move`);
+  });
+}
