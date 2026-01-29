@@ -13,6 +13,9 @@ RUN npm install
 # Bundle app source
 COPY . .
 
+# Run unit tests to ensure bot logic is sound before building the image
+RUN npm test
+
 # Expose the default port
 EXPOSE 8080
 
